@@ -1,6 +1,6 @@
 package com.example.projet.DBconnector;
 
-import databaseconnector.DBConnection;
+
 
 import javax.enterprise.context.RequestScoped;
 import javax.faces.context.FacesContext;
