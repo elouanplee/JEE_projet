@@ -18,9 +18,10 @@ import java.util.Base64;
 @Named
 @RequestScoped
 public class SignUp implements Serializable {
-    private String name;
     private String login1;
     private String password1;
+    private String firstname;
+    private String lastname;
     private String confirmPassword;
 
     public String getPassword1() {
@@ -31,12 +32,20 @@ public class SignUp implements Serializable {
         this.password1 = password1;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getlastName() {
+        return lastname;
+    }
+
+    public void setlastName(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getConfirmPassword() {
@@ -55,26 +64,6 @@ public class SignUp implements Serializable {
         this.login1 = login1;
     }
 
-    /**
-     * Méthode pour vérifier la validité des données et les insérer dans la BDD
-     *
-     * @return redirection vers les pages xhtml
-     * @throws SQLException
-     * @throws NoSuchAlgorithmException
-     */
-    public String dispatch() throws SQLException, NoSuchAlgorithmException {
-        if (confirmPassword.equals(password1)) {
-            PreparedStatement query = DBConnection.getInstance().prepareStatement("INSERT INTO users (`psd`, `name`, `pwd`) VALUES (?,?,?);");
-            query.setString(1, login1);
-            query.setString(2, name);
-            MessageDigest digest = MessageDigest.getInstance("SHA-256");
-            query.setString(3, Base64.getEncoder().encodeToString(digest.digest(password1.getBytes(StandardCharsets.UTF_8))));
-            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("user", login1);
-            query.execute();
-            return query.getUpdateCount() > 0 ? "home.xhtml" : "index.xhtml";
-        }
-        return "index.xhtml";
 
-    }
 
 }
