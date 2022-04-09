@@ -1,0 +1,56 @@
+@font-face{
+    font-family: "Roboto-Black";
+    src: url('Roboto-Black.ttf');
+}
+
+.fond-vert{
+    width: 420px;
+    height: 225px;
+    background-color: rgb(20, 123, 69);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.univbet{
+    color: white;
+    font-size: 85px;
+    font-family: "Roboto-Black";
+    font-weight: bold;
+}
+
+.points{
+    display: flex;
+}
+
+.point1, .point2, .point3, .point4, .point5, .point6{
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    background-color: rgb(58, 170, 53);
+}
+
+.point1{
+    opacity: 55%;
+}
+
+.point2{
+    opacity: 65%;
+}
+
+.point3{
+    opacity: 75%;
+}
+
+.point4{
+    opacity: 85%;
+}
+
+.point5{
+    opacity: 95%;
+}
+
+.point6{
+    opacity: 100%;
+}
