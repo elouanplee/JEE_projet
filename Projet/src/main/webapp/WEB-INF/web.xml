@@ -6,7 +6,7 @@
 
     <context-param>
         <param-name>javax.faces.DEFAULT_SUFFIX</param-name>
-        <param-value>.xhtlm</param-value>
+        <param-value>.xhtml</param-value>
     </context-param>
 
     <servlet>
@@ -20,6 +20,6 @@
     </servlet-mapping>
 
     <welcome-file-list>
-        <welcome-file>chat.jsf</welcome-file>
+        <welcome-file>Home.xhtml</welcome-file>
     </welcome-file-list>
 </web-app>
